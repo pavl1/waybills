@@ -1,0 +1,78 @@
+.print { display: none }
+
+@page {
+    size: A4 landscape;
+}
+@media print {
+    body {
+        line-height: 1.35;
+        font-family: "Times New Roman"
+    }
+
+    .navbar { display: none }
+    .panel { display: none }
+    .print { display: block }
+    .print { position: absolute; top: 0; left: 0 }
+
+    .waybill-front {
+        width: 297mm; height: 200mm; max-height: 200mm;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    .waybill-cover {
+        width: 297mm; height: 200mm; max-height: 200mm;
+        page-break-inside: avoid;
+        overflow: hidden;
+        // border: 1px solid red;
+
+    }
+    table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    td {
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        font-size: 9pt;
+        border-collapse: separate;
+        border-spacing: 0;
+
+        // border: 1px solid gray;
+
+        &.cut-line { border-left: 0.5mm solid black; border-right: 0.5mm solid black }
+    }
+    .center { text-align: center }
+    .right { text-align: right; padding-right: 2pt }
+    .left { text-align: left }
+    .top { vertical-align: top }
+    .middle { vertical-align: middle }
+    .bottom { vertical-align: bottom }
+
+    .min { font-size: 3pt }
+    .small { font-size: 6pt }
+    .little { font-size: 7pt }
+    .big { font-size: 12pt }
+
+    .bold { font-weight: bold }
+    .underline { text-decoration: underline }
+
+    .border { border: 0.5mm solid black }
+    .border-left {border-left: 0.5mm solid black}
+    .border-right {border-right: 0.5mm solid black}
+    .border-top {border-top: 0.5mm solid black}
+    .border-bottom {border-bottom: 0.5mm solid black}
+
+    .border-bold {border: 0.75mm solid black }
+    .border-top-bold {border-top: 0.75mm solid black }
+    .border-right-bold {border-right: 0.75mm solid black }
+    .border-bottom-bold {border-bottom: 0.75mm solid black }
+    .border-left-bold {border-left: 0.75mm solid black }
+
+    .border-left-double { border-left: 1mm double black}
+    .border-right-double { border-right: 1mm double black}
+    .border-top-double { border-top: 1mm double black}
+    .border-bottom-double { border-bottom: 1mm double black}
+}
