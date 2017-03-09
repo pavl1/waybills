@@ -1,6 +1,9 @@
 <template>
     <div class="print">
-        <passenger v-if="type == 3":item="item"></passenger>
+        <!-- <passenger v-if="type == '3'" :item="item"></passenger> -->
+        <!-- <bus-uncommon v-if="type == '6s'" :item="item"></bus-uncommon> -->
+        <!-- <cargo-hourly v-if="type == '4s'" :item="item"></cargo-hourly> -->
+        <cargo-hourly :item="item"></cargo-hourly>
     </div>
 </template>
 
@@ -8,6 +11,10 @@
 
 import { mapGetters } from 'vuex'
 import passenger from '../components/print/passenger.vue'
+import busUncommon from '../components/print/bus-uncommon.vue'
+import cargoHourly from '../components/print/cargo-hourly.vue'
+import cargoPiecework from '../components/print/cargo-piecework.vue'
+import trackCrane from '../components/print/track-crane.vue'
 
 export default {
     data() {
@@ -16,11 +23,12 @@ export default {
             item: {}
         }
     },
-    components: { passenger },
+    components: { passenger, busUncommon, cargoHourly, cargoPiecework, trackCrane },
     mounted() { Bus.$on('print', (payload) => {
             this.item = Object.assign({}, payload.item)
             this.type = payload.type
-            Vue.nextTick( () => window.print())
+            // FIXME: необходимо для рендеринга значений печатной формы
+            // Vue.nextTick( () => window.print())
         }
     )}
 }

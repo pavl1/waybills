@@ -30,8 +30,8 @@
 
                 <div v-for="waybill in waybills" class="panel panel-default">
                     <div class="panel-body">
-                        <waybill-print v-if="waybill.print" :waybill="waybill"></waybill-print>
-                        <waybill-edit v-else-if="waybill.edit" :waybill="waybill"></waybill-edit>
+                        <waybill-edit v-if="waybill.edit" :waybill="waybill"></waybill-edit>
+                        <!-- <waybill-edit v-else-if="waybill.edit" :waybill="waybill"></waybill-edit> -->
                         <waybill-show v-else :waybill="waybill"></waybill-show>
                     </div>
                 </div>
@@ -50,7 +50,6 @@
 import { mapGetters, mapActions } from 'vuex'
 import waybillShow from '../components/waybill-show.vue'
 import waybillEdit from '../components/waybill-edit.vue'
-import waybillPrint from '../components/waybill-print.vue'
 import autoTypes from '../components/auto-types.vue'
 import organizationSelect from '../components/organization-select.vue'
 
@@ -64,7 +63,7 @@ export default {
             }
         }
     },
-    components: { autoTypes, organizationSelect, waybillShow, waybillEdit, waybillPrint },
+    components: { autoTypes, organizationSelect, waybillShow, waybillEdit },
     methods: {
         ...mapActions([ 'init' ]),
         clear() {
@@ -79,7 +78,7 @@ export default {
         this.init('waybill')
     },
     computed: {
-        ...mapGetters([ 'getAutos', 'getEmployers', 'getOrganizations', 'getWaybills' ]),
+        ...mapGetters([ 'getWaybills' ]),
         filteredOrganizations: function() { return _.uniq(
             (this.getWaybills.filter( item => item.string.indexOf(this.selected.type) > -1 )).map( item => item.customer.name )
         ) },

@@ -38,19 +38,6 @@ export default {
     DESTROY_ORGANIZATION (state, item) { state.organizations.splice(state.organizations.indexOf(item), 1) },
 
     // WAYBILLS
-    INIT_WAYBILL(state, items) {
-            state.waybills = items.map(item => {
-                item.print = false;
-                item.edit = false;
-                // item.auto.staff = item.auto.employers.filter(person => person.position_id !== 1);
-                // item.auto.staff_ids = item.auto.staff.map(person => person.id);
-                // item.auto.driver = item.auto.employers.find(person => person.position_id === 1);
-                // item.auto.driver_id = item.auto.driver ? item.auto.driver.id : 0;
-                // item.customer= {};
-                // item.customer_id = 0;
-                // delete item.auto.employers;
-                return item
-            })
-}
+    INIT_WAYBILL(state, items) { state.waybills = items.map(item => {item.edit = false; return item }) }
 
 }

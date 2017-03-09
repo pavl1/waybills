@@ -61,11 +61,11 @@
                         <td colspan="7" class="border border-bold"></td>
                         <td colspan="4" class="bold left">Организация</td>
                         <td colspan="2"></td>
-                        <td colspan="15" class="bottom border-bottom">{{ item.organization.name }}</td>
+                        <td colspan="15" class="bottom border-bottom">{{ organization.name }}</td>
                     </tr>
                     <tr>
                         <td colspan="6" class="left">Организация</td>
-                        <td colspan="40" class="bold bottom border-bottom">{{ item.organization.name }}, {{ item.organization.address }}, тел. {{ item.organization.phone }}</td>
+                        <td colspan="40" class="bold bottom border-bottom">{{ organization.name }}, {{ organization.address }}, тел. {{ organization.phone }}</td>
                         <td colspan="1"></td>
                         <td colspan="6"class="right">по ОКПО</td>
                         <td colspan="7"class="border-bold"></td>
@@ -78,7 +78,7 @@
                         <td colspan="40" class="little">(наименование, адрес, номер телефона)</td>
                         <td colspan="14"></td>
 
-                        <td colspan="21" class="little border-bottom">{{ item.organization.address }}, тел. {{ item.organization.phone }}</td>
+                        <td colspan="21" class="little border-bottom">{{ organization.address }}, тел. {{ organization.phone }}</td>
                     </tr>
                     <tr>
                         <td colspan="8" class="left">Марка автомобиля</td>
@@ -101,7 +101,7 @@
                     </tr>
                     <tr>
                         <td colspan="4" class="left">Водитель</td>
-                        <td colspan="41" class="bold border-bottom">{{ item.driver.name.full }}</td>
+                        <td colspan="41" class="bold border-bottom">{{ item.driver.fullName }}</td>
                         <td colspan="8" class="right">Табельный номер</td>
                         <td colspan="7" class="border border-bold"></td>
                         <td colspan="5"></td>
@@ -128,7 +128,7 @@
                         <td colspan="14" class="border-bottom">стандартная/ограниченная</td>
                         <td colspan="36"></td>
                         <td colspan="4" class="bold right">Заказчик</td>
-                        <td colspan="17" class="bottom border-bottom">{{ item.organization.name }}</td>
+                        <td colspan="17" class="bottom border-bottom">{{ item.customer.name }}</td>
                     </tr>
                     <tr>
                         <td colspan="11"></td>
@@ -145,7 +145,7 @@
                         <td colspan="2">№</td>
                         <td colspan="8" class="border-bottom"></td>
                         <td colspan="19"></td>
-                        <td colspan="21" class="border-bottom">{{ item.organization.address }}</td>
+                        <td colspan="21" class="border-bottom">{{ item.customer.address }}</td>
                     </tr>
                     <tr> </tr>
                     <tr>
@@ -164,7 +164,7 @@
                     </tr>
                     <tr>
                         <td colspan="7" class="left">В распоряжение</td>
-                        <td colspan="28" class="bold border-bottom">{{ item.organization.name }}</td>
+                        <td colspan="28" class="bold border-bottom">{{ item.customer.name }}</td>
                         <td colspan="25"></td>
                         <td colspan="21" class="little">(фамилия, и., о. ответственного лица)</td>
                     </tr>
@@ -179,14 +179,14 @@
                         <td colspan="7" rowspan="2"  class="border middle border-top-bold border-right-bold">Показание спидометра, км.</td>
                     </tr>
                     <tr>
-                        <td colspan="24" class="border-bottom bold">{{ item.organization.address }}</td>
+                        <td colspan="24" class="border-bottom bold"></td>
                         <td colspan="1"></td>
                         <td colspan="10" class="border-bold"></td>
                         <td colspan="1"></td>
                         <td colspan="4" class="bold left bottom">Механик</td>
                         <td colspan="8" class="border-bottom"></td>
                         <td colspan="1"></td>
-                        <td colspan="11" class="border-bottom">{{ item.mechanic }}</td>
+                        <td colspan="11" class="border-bottom bottom">{{ item.mechanic }}</td>
 
                     </tr>
                     <tr>
@@ -225,7 +225,7 @@
                         <td colspan="4" class="bold left">Водитель</td>
                         <td colspan="8" class="border-bottom"></td>
                         <td colspan="1"></td>
-                        <td colspan="11" class="border-bottom">{{ item.driver.name.full }}</td>
+                        <td colspan="11" class="border-bottom">{{ item.driver.shortName }}</td>
 
                     </tr>
                     <tr>
@@ -418,7 +418,7 @@
                         <td colspan="1"></td>
                         <td colspan="8" class="border-bottom"></td>
                         <td colspan="1"></td>
-                        <td colspan="10" class="border-bottom">{{ item.driver.name }}</td>
+                        <td colspan="10" class="border-bottom">{{ item.driver.shortName }}</td>
                         <td colspan="1"></td>
                         <td colspan="16"></td>
                         <td colspan="10" class="border-bold"></td>
@@ -909,49 +909,23 @@
 </template>
 
 <script>
-
-export default {
-    props: { item: Object },
-    data() {
-        return {
-            // organization: {
-            //     name: this.item.organization.name
-            //     address: 'г. Иркутск, ул. Карла Либкнехта, д. 94, п. 11, 12',
-            //     phone: '8 (3952) 500-383'
-            // },
-            // organization: {
-            //     name: 'ООО "Таас-Юрях Нефтегаздобыча"',
-            //     address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502'
-            // },
-            // auto: {
-            //     model: 'Toyota Camry',
-            //     numberplate: 'с123ат',
-            //     type: 'легковой'
-            // },
-            // driver: {
-            //     nameFull: 'Иванов Иван Иванович',
-            //     name: 'Иванов И.И.',
-            //     license: '123456789'
-            // },
-            // mechanic: 'Сидоров С.С.',
-            // dispatcher: 'Петров П.П.',
-            date: new Date(),
-            months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ]
+    export default {
+        props: { item: Object },
+        data() {
+            return {
+                organization: {
+                    name: 'ООО "Таас-Юрях Нефтегаздобыча"',
+                    address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
+                    phone: '8(3952)000-000'
+                },
+                date: new Date(),
+                months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ]
+            }
+        },
+        computed: {
+            day: function() { return this.date.getDate() },
+            month: function() { return this.months[this.date.getMonth() - 1] },
+            year: function() { return this.date.getFullYear() }
         }
-    },
-    computed: {
-        // organization: function() { return this.defaults.organization },
-        // organization: function() { return _.has(this.item, 'organization') ? this.item.organization : this.defaults.organization },
-        // auto: function() { return _.has(this.item, 'auto') ? this.item.auto : this.defaults.auto },
-        // driver: function() { return _.has(this.item, 'driver') ? this.item.auto.driver : this.defaults.driver },
-        // mechanic: function() { return this.defaults.mechanic },
-        // dispatcher: function() { return this.defaults.dispatcher },
-        day: function() { return this.date.getDate() },
-        month: function() { return this.months[this.date.getMonth() - 1] },
-        year: function() { return this.date.getFullYear() }
-
-
     }
-
-}
 </script>

@@ -14,7 +14,6 @@
 
         <div>
             <button-edit :item="waybill"></button-edit>
-            <button-edit :item="waybill" attribute="print"></button-edit>
         </div>
     </div>
 </template>

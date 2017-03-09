@@ -6,22 +6,12 @@
 </template>
 
 <script>
-export default {
-    props: { item: Object, print: Object },
-    data() {
-        return {
-            payload: {
-                type: this.print.type,
-                item: this.item
+    export default {
+        props: { item: Object, print: Object },
+        methods: {
+            print_waybill() {
+                Bus.$emit('print', {type: this.print.type, item: this.item})
             }
         }
-    },
-    methods: {
-        print_waybill() {
-            Bus.$emit('print', this.payload)
-        }
     }
-
-}
-
 </script>
