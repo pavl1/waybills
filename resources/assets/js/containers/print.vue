@@ -3,7 +3,9 @@
         <!-- <passenger v-if="type == '3'" :item="item"></passenger> -->
         <!-- <bus-uncommon v-if="type == '6s'" :item="item"></bus-uncommon> -->
         <!-- <cargo-hourly v-if="type == '4s'" :item="item"></cargo-hourly> -->
-        <cargo-hourly :item="item"></cargo-hourly>
+        <!-- <cargo-piercework v-if="type == '4p'" :item="item"></cargo-piecework> -->
+        <!-- <track-crane v-if="type == 'spec'" :item="item"></track-crane> -->
+        <track-crane :item="item"></track-crane>
     </div>
 </template>
 

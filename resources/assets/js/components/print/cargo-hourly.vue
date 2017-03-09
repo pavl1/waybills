@@ -4,11 +4,11 @@
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tbody>
 					<tr>
-						<td colspan="60"></td>
-						<td colspan="1" rowspan="100"></td>
-						<td colspan="1" rowspan="100" class="middle border-right border-left">Л<br />И<br />Н<br />И<br />Я<br /> <br />О<br />Т<br />Р<br />Е<br />З<br />А</span></td>
-						<td colspan="1" rowspan="100"></td>
-						<td colspan="18"></td>
+						<td colspan="60" width="74.074074%"></td>
+						<td colspan="1" rowspan="100" width="1.234567%"></td>
+						<td colspan="1" rowspan="100" width="1.234567%" class="middle border-right border-left">Л<br />И<br />Н<br />И<br />Я<br /> <br />О<br />Т<br />Р<br />Е<br />З<br />А</span></td>
+						<td colspan="1" rowspan="100" width="1.234567%"></td>
+						<td colspan="18" width="22.222222%"></td>
 					</tr>
 					<tr>
 						<td colspan="6" class="center small bottom">Место для штампа</td>
@@ -41,135 +41,118 @@
 						<td colspan="18" class="center bold">от &laquo; {{ day }} &raquo; {{ month }} {{ year }}г.</td>
 					</tr>
 					<tr>
-						<td colspan="34"></td>
-						<td colspan="6" class="little">(серия)</td>
+                        <td colspan="6"></td>
+                        <td colspan="28" class="big bold right">грузового автомобиля</td>
+						<td colspan="6" class="small">(серия)</td>
 						<td colspan="20"></td>
 
 						<td colspan="18"></td>
 					</tr>
 					<tr>
-						<td colspan="6"></td>
-						<td colspan="26" class="big bold right">грузового автомобиля</td>
-						<td colspan="28"></td>
+                        <td colspan="6" rowspan="2" class="left">Организация</td>
+                        <td colspan="40" rowspan="2" class="bold border-bottom">{{ organization.name }}, {{ organization.address }},  {{ organization.phone }}</td>
+                        <td colspan="14" rowspan="2"></td>
 
-						<td colspan="6" class="left">Организация:</td>
-						<td colspan="12" class="bold border-bottom">{{ organization.name }}</td>
+						<td colspan="5" class="left bottom">Организация</td>
+						<td colspan="13" class="bold little bottom border-bottom">{{ organization.name }}</td>
 					</tr>
 					<tr>
-						<td colspan="6" class="left">Организация</td>
-						<td colspan="40" class="bold border-bottom">ООО &laquo;ЭЛ-Транс&raquo; 664007, г. Иркутск,</td>
-					</tr>
-					<tr>
-						<td colspan="26"></td>
 
-						<td colspan="27"></td>
+                        <td colspan="18" rowspan="3" class="little bottom bold border-bottom">{{ organization.address}}, {{ organization.phone }}</td>
+					</tr>
+                    <tr></tr>
+					<tr>
+						<td colspan="53"></td>
 						<td colspan="7" class="border">Коды</td>
-						<td colspan="18" class="little bold border-bottom">664007,г.Иркутск,ул.Карла Либкнехта,д.94,п.11,12</td>
+
 					</tr>
 					<tr>
 						<td colspan="46"></td>
+						<td colspan="7" class="right middle">Форма по ОКУД</td>
+						<td colspan="7" class="middle border border-bold">0345007</td>
 
-
-						<td colspan="7" rowspan="2" class="right middle">Форма по ОКУД</td>
-						<td colspan="7" rowspan="2" class="middle border border-bold">0345007</td>
-
-
-						<td colspan="1"></td>
-						<td colspan="12" class="small">(адрес, номер телефона)</td>
-					</tr>
-					<tr>
-						<td colspan="46" class="min">&nbsp;</td>
-						<td colspan="18"></td>
+						<td colspan="18" class="little top">(адрес, номер телефона)</td>
 					</tr>
 					<tr>
 						<td colspan="7" class="left">Марка автобуса</td>
 						<td colspan="39" class="bold border-bottom">{{ item.auto.model }}</td>
-						<td colspan="2"></td>
-						<td colspan="5"class="right">по ОКПО</td>
+						<td colspan="7"class="right">по ОКПО</td>
 						<td colspan="7"class="border-bold"></td>
 
-
+                        <td colspan="4">Автомобиль</td>
+						<td colspan="1"></td>
+						<td colspan="13" class="bold border-bottom">{{ item.auto.model }}</td>
 					</tr>
 					<tr>
-						<td colspan="14" class="left">Государственный номерной знак</td>
-						<td colspan="32" class="bold border-bottom">{{ item.auto.numberplate }}</td>
-
+						<td colspan="13" class="left">Государственный номерной знак</td>
+						<td colspan="33" class="bold border-bottom">{{ item.auto.numberplate }}</td>
 						<td colspan="7" class="right">Режим работы</td>
 						<td colspan="7" class="border-bold"></td>
 
-						<td colspan="4">Автомобиль</td>
-						<td colspan="2"></td>
-						<td colspan="12" class="border-bottom"></td>
+                        <td colspan="18" class="small">(марка)</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="left">Водитель</td>
 						<td colspan="42" class="bold border-bottom">{{ item.driver.fullName }}</td>
-						<td colspan="3"></td>
-						<td colspan="4" class="right">Колонна</td>
+						<td colspan="7" class="right">Колонна</td>
 						<td colspan="7" class="border border-bold"></td>
 
-						<td colspan="18" class="small">(марка)</td>
+                        <td colspan="8" class="left">Гос.номерной знак</td>
+                        <td colspan="10" class="bold border-bottom">{{ item.auto.numberplate }}</td>
 					</tr>
 					<tr>
-						<td colspan="49"></td>
-						<td colspan="4" class="right">Бригада</td>
+						<td colspan="46"></td>
+						<td colspan="7" class="right">Бригада</td>
 						<td colspan="7" class="border border-bold"></td>
 
-						<td colspan="10" class="left">Гос.номерной знак:</td>
-						<td colspan="7" class="border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="8" class="left">Удостоверение №</td>
-						<td colspan="8" class="border-bottom">{{ item.driver.license }}</td>
-						<td colspan="4">Класс</td>
-						<td colspan="8" class="border-bottom"></td>
+						<td colspan="7" class="left">Удостоверение №</td>
+						<td colspan="9" class="bold border-bottom">{{ item.driver.license }}</td>
+						<td colspan="4" class="right">Класс</td>
+						<td colspan="8" class="bold border-bottom"></td>
 						<td colspan="25"></td>
 						<td colspan="7" class="border border-bold"></td>
 
+                        <td colspan="4" class="left">Заказчик</td>
+                        <td colspan="14" class="bold bottom border-bottom">{{ item.customer.name }}</td>
 					</tr>
 					<tr>
-
 						<td colspan="40"></td>
 						<td colspan="13" class="right">Гаражный номер</td>
 						<td colspan="7" class="border border-bold"></td>
 
-						<td colspan="2" class="little">Заказчик</td>
-						<td colspan="16" class="bold small border-bottom">ООО "Шлюмберже Восток"г.Южно-Cахалинск</td>
+                        <td colspan="4"></td>
+                        <td colspan="14"class="small">(наименование)</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="left">Прицеп</td>
 						<td colspan="2" class="border-bottom">ПП</td>
 						<td colspan="39"></td>
-						<td colspan="8">Табельный номер</td>
+						<td colspan="8" class="right">Табельный номер</td>
 						<td colspan="7" class="border border-bold"></td>
-						<td colspan="5"></td>
-						<td colspan="8"class="small">(Наименование)</td>
+
+                        <td colspan="18" rowspan="2" class="bold little bottom border-bottom">{{ item.customer.address }}, тел. {{ item.customer.phone }}</td>
 					</tr>
 					<tr>
-						<td colspan="12" class="left">Регистрационный номер:</td>
-						<td colspan="6" class="border-bottom"></td>
-						<td colspan="4"></td>
-						<td colspan="3" class="left">Серия:</td>
+						<td colspan="10" class="left">Регистрационный номер</td>
+						<td colspan="8" class="border-bottom"></td>
+						<td colspan="1"></td>
+						<td colspan="3" class="right">Серия</td>
 						<td colspan="2" class="border-bottom"></td>
-						<td colspan="4"></td>
-						<td colspan="1" class="left">№:</td>
+						<td colspan="1"></td>
+						<td colspan="1" class="right">№</td>
 						<td colspan="2" class="border-bottom"></td>
-						<td colspan="30"></td>
-						<td colspan="16" class="border-bottom"></td>
+						<td colspan="32"></td>
+
 					</tr>
 					<tr>
-						<td colspan="64"></td>
-						<td colspan="16" class="small">(адрес, номера телефонов)</td>
+						<td colspan="60"></td>
+						<td colspan="18" class="small">(адрес, номера телефонов)</td>
 					</tr>
-
-
 					<tr>
 						<td colspan="60"></td>
 						<td colspan="18" class="border-bottom">&nbsp;</td>
-					</tr>
-					<tr>
-						<td colspan="60"></td>
-						<td colspan="18" class="small">(фамилия, и., о. ответственного лица)</td>
 					</tr>
 					<tr></tr>
 					<tr>
@@ -177,7 +160,7 @@
 						<td colspan="1"></td>
 						<td colspan="30" class="border-top-double border-left-double border-right-double border-bottom">Задание водителю</td>
 
-						<td colspan="18"></td>
+                        <td colspan="18" class="small">(фамилия, и., о. ответственного лица)</td>
 					</tr>
 					<tr>
 						<td colspan="6" rowspan="2" class="little middle border-top border-bottom border-left-double border-right-double">операция</td>
@@ -295,7 +278,7 @@
 						<td colspan="4" rowspan="2" class="little bold left border-top border-right border-bottom border-left-double"></td>
 						<td colspan="4" rowspan="2" class="little bold left border-top border-right-double border-bottom border-left"></td>
 
-						<td colspan="4" class="bold">Заказчик</td>
+						<td colspan="4" class="left">Заказчик</td>
 						<td colspan="7" class="border-bottom"></td>
 						<td colspan="1"></td>
 						<td colspan="6" class="border-bottom"></td>
@@ -354,7 +337,7 @@
 						<td colspan="7">Особые отметки</td>
 						<td colspan="23" class="border-bottom"></td>
 
-						<td colspan="14"></td>
+						<td colspan="18"></td>
 					</tr>
 					<tr>
 						<td colspan="3" class="little border-top border-right-bold border-bottom-double border-left-double">&nbsp;</td>
@@ -413,7 +396,7 @@
 						<td colspan="1"></td>
 						<td colspan="5" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="8" class="border-bottom"></td>
+						<td colspan="8" class="bold border-bottom">{{ item.mechanic }}</td>
 
 						<td colspan="5" class="little middle border-top border-right-double border-bottom-double border-left-double">21</td>
 						<td colspan="5" class="little middle border-top border-right-double border-bottom-double border-left-double">22</td>
@@ -439,7 +422,7 @@
 						<td colspan="1"></td>
 						<td colspan="5" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="8" class="border-bottom"></td>
+						<td colspan="8" class="bold border-bottom">{{ item.driver.shortName }}</td>
 					</tr>
 					<tr>
 						<td colspan="8" class="left">выдать горючего</td>
@@ -467,11 +450,11 @@
 						<td colspan="6"></td>
 					</tr>
 					<tr>
-						<td colspan="5" class="left bold">Диспетчер</td>
+						<td colspan="5" class="left">Диспетчер</td>
 						<td colspan="1"></td>
 						<td colspan="5" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="12" class="border-bottom"></td>
+						<td colspan="12" class="bold border-bottom">{{ item.dispatcher }}</td>
 
 						<td colspan="12"></td>
 						<td colspan="6" class="little top border-top">неисправен</td>
@@ -495,10 +478,10 @@
 
 						<td colspan="24"></td>
 
-						<td colspan="9" class="left bold">Сдал водитель</td>
+						<td colspan="9" class="left">Сдал водитель</td>
 						<td colspan="5" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="9" class="border-bottom"></td>
+						<td colspan="9" class="bold border-bottom">{{ item.driver.shortName }}</td>
 
 						<td colspan="18"></td>
 					</tr>
@@ -527,12 +510,12 @@
 						<td colspan="7" class="small">(расшифровка подписи)</td>
 
 						<td colspan="6"></td>
-						<td colspan="9" class="bold left">Принял механик</td>
+						<td colspan="9" class="left">Принял механик</td>
 						<td colspan="5" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="9" class="border-bottom"></td>
+						<td colspan="9" class="bold border-bottom">{{ item.mechanic }}</td>
 
-						<td colspan="6" class="left bold">Таксировщик</td>
+						<td colspan="6" class="left">Таксировщик</td>
 						<td colspan="4" class="border-bottom"></td>
 						<td colspan="1"></td>
 						<td colspan="7" class="border-bottom"></td>
@@ -557,11 +540,11 @@
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tbody>
 					<tr>
-						<td colspan="18"></td>
-						<td colspan="1" rowspan="100"></td>
-						<td colspan="1" rowspan="100" class="middle border-right border-left">Л<br />И<br />Н<br />И<br />Я<br /> <br />О<br />Т<br />Р<br />Е<br />З<br />А</span></td>
-						<td colspan="1" rowspan="100"></td>
-						<td colspan="60"></td>
+						<td colspan="18" width="22.222222%"></td>
+						<td colspan="1" rowspan="100" width="1.234567%"></td>
+						<td colspan="1" rowspan="100" width="1.234567%" class="middle border-right border-left">Л<br />И<br />Н<br />И<br />Я<br /> <br />О<br />Т<br />Р<br />Е<br />З<br />А</span></td>
+						<td colspan="1" rowspan="100" width="1.234567%"></td>
+						<td colspan="60" width="74.074074%"></td>
 					</tr>
 					<tr>
 						<td colspan="18"></td>
@@ -571,9 +554,10 @@
 						<td colspan="18">&nbsp;</td>
 						<td colspan="57"></td>
 					</tr>
+                    <tr></tr>
 					<tr>
 						<td colspan="18" class="bold">ТАЛОН ЗАКАЗЧИКА</td>
-						<td colspan="50" class="border-top-double border-right-double border-bottom border-left-double">Маршрут движения (заполняется заказчиком)</td>
+						<td colspan="57" class="border-top-double border-right-double border-bottom border-left-double">Маршрут движения (заполняется заказчиком)</td>
 					</tr>
 					<tr>
 						<td colspan="8" class="bold">к путевому листу</td>
@@ -582,9 +566,9 @@
 						<td colspan="6" class="border-bottom"></td>
 
 
-						<td colspan="8" class="border-top border-right-double border-left-double bottom">номер</td>
-						<td colspan="14" class="border-top border-right-double"></td>
-						<td colspan="14" class="border-top border-right-double"></td>
+						<td colspan="8" rowspan="3" class="middle border-top border-right-double border-left-double border-bottom">номер ездки</td>
+						<td colspan="17" rowspan="3" class="middle border-top border-right-double border-bottom">откуда</td>
+						<td colspan="18" rowspan="3" class="middle border-top border-right-double border-bottom">куда</td>
 						<td colspan="14" class="border-top border-bottom border-right-double">пробег, км</td>
 					</tr>
 					<tr>
@@ -592,155 +576,140 @@
 						<td colspan="2" class="small">(серия)</td>
 						<td colspan="8"></td>
 
-
-						<td colspan="8" class=" border-right-double border-left-double top">ездки</td>
-						<td colspan="14" class="border-right-double">откуда</td>
-						<td colspan="14" class="border-right-double">куда</td>
-						<td colspan="7" class="border-right">с пассажирами</td>
-						<td colspan="7" class="border-right-double ">без пассажиров</td>
+						<td colspan="7" rowspan="2" class="middle border-right border-bottom">с пассажирами</td>
+						<td colspan="7" rowspan="2" class="middle border-right-double border-bottom">без пассажиров</td>
 					</tr>
 					<tr>
 						<td colspan="1"></td>
 						<td colspan="1" class="bold">от</td>
-						<td colspan="1" class="bold right">"</td>
-						<td colspan="2" class="border-bottom"></td>
-						<td colspan="1" class="bold left">"</td>
-						<td colspan="6" class="border-bottom"></td>
+						<td colspan="1" class="bold right">&laquo;</td>
+						<td colspan="2" class="bold border-bottom">{{ day }}</td>
+						<td colspan="1" class="bold left">&raquo;</td>
+						<td colspan="6" class="bold border-bottom">{{ month }}</td>
 						<td colspan="1"></td>
-						<td colspan="2" class="border-bottom">2016</td>
+						<td colspan="2" class="bold border-bottom">{{ year }}</td>
 						<td colspan="1" class="bold left">г.</td>
 						<td colspan="2"></td>
 
-
-						<td colspan="8" class=" border-right-double border-left-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
-						<td colspan="7" class="border-right border-bottom"></td>
-						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="6">Организация:</td>
-						<td colspan="12" class="border-bottom bold">ООО "ЭЛ-Транс" г. Иркутск</td>
+						<td colspan="5" class="left bottom">Организация</td>
+						<td colspan="13" class="bold little bottom border-bottom">{{ organization.name }}</td>
 
 
 						<td colspan="8" class=" border-right-double border-left-double border-bottom-double">25</td>
-						<td colspan="14" class="border-right-double border-bottom-double">26</td>
-						<td colspan="14" class="border-right-double border-bottom-double">27</td>
+						<td colspan="17" class="border-right-double border-bottom-double">26</td>
+						<td colspan="18" class="border-right-double border-bottom-double">27</td>
 						<td colspan="7" class="border-right border-bottom-double">28</td>
 						<td colspan="7" class="border-right-double border-bottom-double">29</td>
 					</tr>
 					<tr>
-						<td colspan="6"></td>
-						<td colspan="12" class="small">(наименование)</td>
+						<td colspan="5"></td>
+						<td colspan="13" class="small">(наименование)</td>
 
-						<td colspan="8" class=" border-right-double border-left-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
+						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
+						<td colspan="17" class="border-right-double border-bottom"></td>
+						<td colspan="18" class="border-right-double border-bottom"></td>
 						<td colspan="7" class="border-right border-bottom"></td>
 						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="18" class="bold border-bottom">ул.Карла Либкнехта, 94, п.11,12</td>
+						<td colspan="18" rowspan="2" class="bold bottom little border-bottom">{{ organization.address }}, {{ organization.phone }}</td>
 
-						<td colspan="8" class=" border-right-double border-left-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
+						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
+						<td colspan="17" class="border-right-double border-bottom"></td>
+						<td colspan="18" class="border-right-double border-bottom"></td>
 						<td colspan="7" class="border-right border-bottom"></td>
 						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="18" class="small">(адрес, номер телефона)</td>
 
 						<td colspan="8" class=" border-right-double border-left-double"></td>
-						<td colspan="14" class="border-right-double"></td>
-						<td colspan="14" class="border-right-double"></td>
+						<td colspan="17" class="border-right-double"></td>
+						<td colspan="18" class="border-right-double"></td>
 						<td colspan="7" class="border-right"></td>
 						<td colspan="7" class="border-right-double"></td>
 					</tr>
 					<tr>
-						<td colspan="6">Автобус</td>
-						<td colspan="12" class="border-bottom bold">Toyota Hiace</td>
+                        <td colspan="18" class="small">(адрес, номер телефона)</td>
 
 						<td colspan="8" class=" border-right-double border-left-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom"></td>
+						<td colspan="17" class="border-right-double border-bottom"></td>
+						<td colspan="18" class="border-right-double border-bottom"></td>
 						<td colspan="7" class="border-right border-bottom"></td>
 						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="6"></td>
-						<td colspan="12" class="small">(тип, марка)</td>
+                        <td colspan="3" class="left">Автобус</td>
+                        <td colspan="15" class="border-bottom bold">{{ item.auto.model }}</td>
 
-						<td colspan="8" class=" border-right-double border-left-double"></td>
-						<td colspan="14" class="border-right-double"></td>
-						<td colspan="14" class="border-right-double"></td>
-						<td colspan="7" class="border-right"></td>
-						<td colspan="7" class="border-right-double"></td>
+						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
+						<td colspan="17" class="border-right-double border-bottom"></td>
+						<td colspan="18" class="border-right-double border-bottom"></td>
+						<td colspan="7" class="border-right border-bottom"></td>
+						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="12" class="little"> Государственный номерной знак</td>
-						<td colspan="6" class="border-bottom"></td>
+                        <td colspan="3"></td>
+                        <td colspan="15" class="small">(тип, марка)</td>
 
-						<td colspan="8" class=" border-right-double border-left-double border-bottom"></td>
-						<td colspan="14" class="border-right-double border-bottom-double"></td>
-						<td colspan="14" class="border-right-double border-bottom-double"></td>
+						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
+						<td colspan="17" class="border-right-double border-bottom-double"></td>
+						<td colspan="18" class="border-right-double border-bottom-double"></td>
 						<td colspan="7" class="border-right border-bottom-double"></td>
 						<td colspan="7" class="border-right-double border-bottom-double"></td>
 					</tr>
+                    <tr></tr>
 					<tr>
-						<td colspan="18" class="big">&nbsp;</td>
+                        <td colspan="12" class="left">Государственный номерной знак</td>
+                        <td colspan="6" class="bold border-bottom">{{ item.auto.numberplate }}</td>
+
 						<td colspan="57"></td>
 					</tr>
 					<tr>
-						<td colspan="4" class="bold">Заказчик</td>
-						<td colspan="14" class="border-bottom bold little">ООО "Таас-Юрях Нефтегазодобыча"</td>
+						<td colspan="4" class="left">Заказчик</td>
+						<td colspan="14" class="border-bottom bold little bottom">{{ item.customer.name }}</td>
 
-
-						<td colspan="6" class="right">М.П. или</td>
-						<td colspan="3"></td>
-						<td colspan="4" class="bold bottom">Заказчик</td>
+						<td colspan="14" rowspan="3" class="litle middle">М.П. или<br />штампа</td>
+						<td colspan="4" class="bottom">Заказчик</td>
 						<td colspan="6" class="border-bottom"></td>
 						<td colspan="1"></td>
 						<td colspan="6" class="border-bottom"></td>
 						<td colspan="1"></td>
-						<td colspan="6" class="border-bottom"></td>
+						<td colspan="7" class="border-bottom"></td>
+                        <td colspan="18"></td>
 					</tr>
+                    <tr></tr>
 					<tr>
 						<td colspan="4"></td>
 						<td colspan="14" class="small">(наименование)</td>
 
-
-						<td colspan="3"></td>
-						<td colspan="3">штампа</td>
-						<td colspan="7"></td>
+						<td colspan="4"></td>
 						<td colspan="6" class="small">(должность)</td>
 						<td colspan="1"></td>
 						<td colspan="6" class="small">(подпись)</td>
 						<td colspan="1"></td>
-						<td colspan="9" class="left small">(расшифровка подписи)</td>
+						<td colspan="7" class="small">(расшифровка подписи)</td>
+                        <td colspan="18"></td>
 					</tr>
 					<tr>
-						<td colspan="18" class="bold border-bottom">г. Иркутск, ул. Байкальская, 279</td>
+						<td colspan="18" class="bold little border-bottom">{{ item.customer.address}}, {{ item.customer.phone }}</td>
 
-						<td colspan="50" class="border-top-double border-right-double border-bottom border-left-double">Простои на линии</td>
-						<td colspan="7" class="border-top-double border-right-double  border-left-double">Подпись</td>
+						<td colspan="50" class="middle border-top-double border-right-double border-bottom border-left-double">Простои на линии</td>
+						<td colspan="7" rowspan="3" class="middle border-top-double border-right-double  border-left-double">Подпись ответственного работника</td>
 					</tr>
 					<tr>
 						<td colspan="18" class="small">(адрес, номер телефона)</td>
 
-						<td colspan="28" class="border-right-double border-left-double"></td>
-						<td colspan="10" class="border-right-double "></td>
+						<td colspan="28" rowspan="2" class="middle border-right-double border-left-double">наименование</td>
+						<td colspan="10" rowspan="2" class="middle border-right-double ">код</td>
 						<td colspan="12" class=" border-right-double border-left-double border-bottom">время, ч. мин.</td>
-						<td colspan="7" class=" border-right-double border-left-double">ответственного</td>
 					</tr>
 					<tr>
 						<td colspan="18" class="small"></td>
 
-						<td colspan="28" class="border-right-double border-left-double">наименование</td>
-						<td colspan="10" class="border-right-double ">код</td>
 						<td colspan="6" class=" border-right border-left-double">начало</td>
 						<td colspan="6" class=" border-right-double border-left">окончание</td>
-						<td colspan="7" class=" border-right-double border-left-double">работника</td>
 					</tr>
 					<tr>
 						<td colspan="18" class="border-bottom"></td>
@@ -813,7 +782,7 @@
 						<td colspan="5" class="little border-right-double border-left  border-bottom">в том числе с пассажирами</td>
 					</tr>
 					<tr>
-						<td colspan="4" class="bold bottom">Заказчик</td>
+						<td colspan="4" class="left bottom">Заказчик</td>
 						<td colspan="6" class="border-bottom"></td>
 						<td colspan="1"></td>
 						<td colspan="6" class="border-bottom"></td>
@@ -840,18 +809,21 @@
 						<td colspan="5" class="border-right border-left-double  border-bottom-bold"></td>
 						<td colspan="5" class="border-right-bold border-bottom-bold"></td>
 					</tr>
+                    <tr></tr>
 					<tr>
 						<td colspan="6">М.П. или штампа</td>
 						<td colspan="4"></td>
 						<td colspan="8" class="border-bottom"></td>
 
+                        <td colspan="57"></td>
 					</tr>
 					<tr>
+                        <td colspan="6"></td>
 						<td colspan="4"></td>
 						<td colspan="8" class="little">(расшифровка подписи)</td>
-						
-						<td colspan="6">Таксировка:</td>
-						<td colspan="36" class="border-bottom"></td>
+
+						<td colspan="5" class="left">Таксировка</td>
+						<td colspan="37" class="border-bottom"></td>
 					</tr>
 					<tr>
 						<td colspan="18">Заполняется организацией</td>
@@ -924,25 +896,22 @@
 					</tr>
 					<tr>
 						<td colspan="18">&nbsp;</td>
-						
+
 						<td colspan="57"></td>
 					</tr>
 					<tr>
-						<td colspan="4" class="bottom">Заказчик</td>
+						<td colspan="5" class="bottom">Таксировщик</td>
 						<td colspan="6" class="border-bottom"></td>
 						<td colspan="1"></td>
 						<td colspan="6" class="border-bottom"></td>
-						<td colspan="1"></td>
 
 						<td colspan="57"></td>
-
 					</tr>
 					<tr>
-						<td colspan="4"></td>
+						<td colspan="5"></td>
 						<td colspan="6" class="little">(должность)</td>
 						<td colspan="1"></td>
 						<td colspan="6" class="little">(подпись)</td>
-						<td colspan="1"></td>
 
 						<td colspan="57"></td>
 					</tr>
@@ -954,7 +923,7 @@
 
 <script>
 	export default {
-		// props: { item: Object },
+		props: { item: Object },
 		data() {
 			return {
 				organization: {
@@ -966,31 +935,31 @@
 				months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ],
 
 				// FIXME: для разработки - убрать
-				item: {
-					auto: {
-						model: 'Toyota',
-						numberplate: '000000000',
-						type: 'автобус'
-					},
-					customer: {
-						name: 'ЗАО ОблТяжСтрой',
-						address: '927461, Оренбургская область, город Щёлково, шоссе Гагарина, 56',
-						phone: '8(3952) 000-000'
-					},
-					contractor: {
-						name: 'ЗАО АсбоцементЛифтЖелДор',
-						address: '664025, Иркутская область, город, шоссе, дом',
-						phone: '8(495) 0000-000'
-					},
-					driver: {
-						shortName: 'Иванов И.В.',
-						fullName: 'Иванов Иван Васильевич',
-						license: '000123456'
-					},
-					dispatcher: 'Сидоров С.С.',
-					mechanic: 'Петров П.П.',
-					refueler: 'Зайцев З.З.'
-				}
+				// item: {
+				// 	auto: {
+				// 		model: 'Toyota',
+				// 		numberplate: '000000000',
+				// 		type: 'автобус'
+				// 	},
+				// 	customer: {
+				// 		name: 'ЗАО ОблТяжСтрой',
+				// 		address: '927461, Оренбургская область, город Щёлково, шоссе Гагарина, 56',
+				// 		phone: '8(3952) 000-000'
+				// 	},
+				// 	contractor: {
+				// 		name: 'ЗАО АсбоцементЛифтЖелДор',
+				// 		address: '664025, Иркутская область, город, шоссе, дом',
+				// 		phone: '8(495) 0000-000'
+				// 	},
+				// 	driver: {
+				// 		shortName: 'Иванов И.В.',
+				// 		fullName: 'Иванов Иван Васильевич',
+				// 		license: '000123456'
+				// 	},
+				// 	dispatcher: 'Сидоров С.С.',
+				// 	mechanic: 'Петров П.П.',
+				// 	refueler: 'Зайцев З.З.'
+				// }
 			}
 		},
 		computed: {

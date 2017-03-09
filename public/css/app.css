@@ -7895,8 +7895,6 @@ p:last-of-type {
 .flex {
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-flow: row nowrap;
   -webkit-box-align: top;
   align-items: top;
