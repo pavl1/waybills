@@ -21,8 +21,10 @@ Route::get('/waybill', 'WaybillController@show');
 Route::get('/organization', 'OrganizationController@show');
 Route::get('/employer', 'EmployerController@show');
 Route::get('/auto', 'AutoController@show');
+Route::resource('company', 'CompanyController', ['except' => [ 'index', 'create', 'show'] ]);
 
 Route::group(['prefix' => 'api'], function() {
+    Route::get('/company', 'CompanyController@index');
     Route::resource('/auto', 'AutoController', ['except' => ['create', 'edit']]);
     Route::resource('/autotype', 'AutoTypeController', ['except' => ['create', 'show', 'edit']]);
     Route::resource('/employer', 'EmployerController', ['except' => ['create', 'show', 'edit']]);

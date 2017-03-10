@@ -1,5 +1,9 @@
 export default {
 
+    getCompany (state) {
+        return state.company
+    },
+
     getPositions (state) {
         return state.types.positions
     },

@@ -10,6 +10,9 @@ export default {
         }
     },
 
+    // COMPANY
+    INIT_COMPANY (state, items) {state.company = items },
+
     // EMPLOYER
     INIT_POSITION (state, items) { state.types.positions = items },
     INIT_EMPLOYER (state, items) {

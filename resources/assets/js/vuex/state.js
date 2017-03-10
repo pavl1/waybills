@@ -1,4 +1,5 @@
 export default {
+    company: {},
     employers: [],
     autos: [],
     organizations: [],

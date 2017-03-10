@@ -61,11 +61,11 @@
                         <td colspan="7" class="border border-bold"></td>
                         <td colspan="4" class="bold left">Организация</td>
                         <td colspan="2"></td>
-                        <td colspan="15" class="bottom border-bottom">{{ organization.name }}</td>
+                        <td colspan="15" class="bottom border-bottom">{{ company.name }}</td>
                     </tr>
                     <tr>
                         <td colspan="6" class="left">Организация</td>
-                        <td colspan="40" class="bold bottom border-bottom">{{ organization.name }}, {{ organization.address }}, тел. {{ organization.phone }}</td>
+                        <td colspan="40" class="bold bottom border-bottom">{{ company.name }}, {{ company.requisites.phone }}, тел. {{ company.requisites.phone }}</td>
                         <td colspan="1"></td>
                         <td colspan="6"class="right">по ОКПО</td>
                         <td colspan="7"class="border-bold"></td>
@@ -78,7 +78,7 @@
                         <td colspan="40" class="little">(наименование, адрес, номер телефона)</td>
                         <td colspan="14"></td>
 
-                        <td colspan="21" class="little border-bottom">{{ organization.address }}, тел. {{ organization.phone }}</td>
+                        <td colspan="21" class="little border-bottom">{{ company.requisites.phone }}, тел. {{ company.requisites.phone }}</td>
                     </tr>
                     <tr>
                         <td colspan="8" class="left">Марка автомобиля</td>
@@ -910,14 +910,9 @@
 
 <script>
     export default {
-        props: { item: Object },
+        props: { item: Object, company: Object },
         data() {
             return {
-                organization: {
-                    name: 'ООО "Таас-Юрях Нефтегаздобыча"',
-                    address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
-                    phone: '8(3952)000-000'
-                },
                 date: new Date(),
                 months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ]
             }

@@ -1,11 +1,10 @@
 <template>
     <div class="print">
-        <!-- <passenger v-if="type == '3'" :item="item"></passenger> -->
-        <!-- <bus-uncommon v-if="type == '6s'" :item="item"></bus-uncommon> -->
-        <!-- <cargo-hourly v-if="type == '4s'" :item="item"></cargo-hourly> -->
-        <!-- <cargo-piercework v-if="type == '4p'" :item="item"></cargo-piecework> -->
-        <!-- <track-crane v-if="type == 'spec'" :item="item"></track-crane> -->
-        <track-crane :item="item"></track-crane>
+        <passenger v-if="type == '3'" :item="item" :company="getCompany"></passenger>
+        <bus-uncommon v-if="type == '6s'" :item="item" :company="getCompany"></bus-uncommon>
+        <cargo-hourly v-if="type == '4s'" :item="item" :company="getCompany"></cargo-hourly>
+        <cargo-piecework v-if="type == '4p'" :item="item" :company="getCompany"></cargo-piecework>
+        <track-crane v-if="type == 'spec'" :item="item" :company="getCompany"></track-crane>
     </div>
 </template>
 
@@ -30,8 +29,11 @@ export default {
             this.item = Object.assign({}, payload.item)
             this.type = payload.type
             // FIXME: необходимо для рендеринга значений печатной формы
-            // Vue.nextTick( () => window.print())
+            Vue.nextTick( () => window.print())
         }
-    )}
+    )},
+    computed: {
+        ...mapGetters([ 'getCompany' ])
+    }
 }
 </script>

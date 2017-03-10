@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Сергей Павленко',
             'email' => 'sergey@impress.io',
             'password' => bcrypt('P@ssw0rd'),
+            'company_id' => 1
         ]);
     }
 }

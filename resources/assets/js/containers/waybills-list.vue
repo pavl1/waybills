@@ -72,6 +72,7 @@ export default {
         }
     },
     mounted() {
+        this.init('company')
         this.init('employer')
         this.init('organization')
         this.init('auto')

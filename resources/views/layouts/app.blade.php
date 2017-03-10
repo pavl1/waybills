@@ -51,6 +51,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="{{ url('/company/1/edit') }}">Компания</a>
+                            </li>
                         <!-- Authentication Links -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

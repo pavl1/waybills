@@ -50,15 +50,15 @@
 					</tr>
 					<tr>
                         <td colspan="6" rowspan="2" class="left">Организация</td>
-                        <td colspan="40" rowspan="2" class="bold border-bottom">{{ organization.name }}, {{ organization.address }},  {{ organization.phone }}</td>
+                        <td colspan="40" rowspan="2" class="bold border-bottom">{{ company.name }}, {{ company.requisites.address }},  {{ company.requisites.phone }}</td>
                         <td colspan="14" rowspan="2"></td>
 
 						<td colspan="5" class="left bottom">Организация</td>
-						<td colspan="13" class="bold little bottom border-bottom">{{ organization.name }}</td>
+						<td colspan="13" class="bold little bottom border-bottom">{{ company.name }}</td>
 					</tr>
 					<tr>
 
-                        <td colspan="18" rowspan="3" class="little bottom bold border-bottom">{{ organization.address}}, {{ organization.phone }}</td>
+                        <td colspan="18" rowspan="3" class="little bottom bold border-bottom">{{ company.requisites.address}}, {{ company.requisites.phone }}</td>
 					</tr>
                     <tr></tr>
 					<tr>
@@ -594,7 +594,7 @@
 					</tr>
 					<tr>
 						<td colspan="5" class="left bottom">Организация</td>
-						<td colspan="13" class="bold little bottom border-bottom">{{ organization.name }}</td>
+						<td colspan="13" class="bold little bottom border-bottom">{{ company.name }}</td>
 
 
 						<td colspan="8" class=" border-right-double border-left-double border-bottom-double">25</td>
@@ -614,7 +614,7 @@
 						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="18" rowspan="2" class="bold bottom little border-bottom">{{ organization.address }}, {{ organization.phone }}</td>
+						<td colspan="18" rowspan="2" class="bold bottom little border-bottom">{{ company.requisites.address }}, {{ company.requisites.phone }}</td>
 
 						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
 						<td colspan="17" class="border-right-double border-bottom"></td>
@@ -923,18 +923,20 @@
 
 <script>
 	export default {
-		props: { item: Object },
+		props: { item: Object, company: Object },
 		data() {
 			return {
-				organization: {
-					name: 'ООО "Таас-Юрях Нефтегаздобыча"',
-					address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
-					phone: '8(3952)000-000'
-				},
 				date: new Date(),
 				months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ],
 
 				// FIXME: для разработки - убрать
+				// company: {
+				// 	name: 'ООО "Таас-Юрях Нефтегаздобыча"',
+				// 	requisites: {
+				// 		address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
+				// 		phone: '8(3952)000-000'
+				//  }
+				// },
 				// item: {
 				// 	auto: {
 				// 		model: 'Toyota',

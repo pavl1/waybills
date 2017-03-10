@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <td colspan="6" class="left">Организация</td>
-                        <td colspan="60" class="bold border-bottom">{{ organization.name }}, {{ organization.address }}, {{ organization.phone }}</td>
+                        <td colspan="60" class="bold border-bottom">{{ company.name }}, {{ company.requisites.address }}, {{ company.requisites.phone }}</td>
                         <td colspan="5"class="right">по ОКПО</td>
                         <td colspan="7"class="border-bold"></td>
                     </tr>
@@ -1166,18 +1166,20 @@
 
 <script>
 export default {
-    // props: { item: Object },
+    props: { item: Object, company: Object },
     data() {
         return {
-            organization: {
-                name: 'ООО "Таас-Юрях Нефтегаздобыча"',
-                address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
-                phone: '8(3952)000-000'
-            },
             date: new Date(),
             months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ],
 
             // FIXME: для разработки - убрать
+            // company: {
+            //     name: 'ООО "Таас-Юрях Нефтегаздобыча"',
+            //     requisites: {
+            //         address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
+            //         phone: '8(3952)000-000'
+            //     }
+            // },
             // item: {
             //     auto: {
             //         model: 'Toyota',

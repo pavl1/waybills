@@ -78,13 +78,13 @@
 					</tr>
 					<tr>
 						<td colspan="6" class="left">Организация</td>
-						<td colspan="40" class="bold border-bottom">{{ organization.name }}</td>
+						<td colspan="40" class="bold border-bottom">{{ company.name }}</td>
 						<td colspan="3"></td>
 						<td colspan="4"class="right">по ОКПО</td>
 						<td colspan="7"class="border-bold"></td>
 
 						<td colspan="5" class="left">Организация</td>
-						<td colspan="13" class="bold little bottom border-bottom">{{ organization.name }}</td>
+						<td colspan="13" class="bold little bottom border-bottom">{{ company.name }}</td>
 					</tr>
 					<tr>
 						<td colspan="6"></td>
@@ -98,12 +98,12 @@
 					</tr>
 					<tr>
 						<td colspan="6"></td>
-						<td colspan="40" class="bold bottom border-bottom">{{ organization.address }}, тел. {{ organization.phone }} </td>
+						<td colspan="40" class="bold bottom border-bottom">{{ company.requisites.address }}, тел. {{ company.requisites.phone }} </td>
 						<td colspan="3"></td>
 						<td colspan="4" class="right">Колонна</td>
 						<td colspan="7" class="border border-bold"></td>
 
-						<td colspan="18" class="bold little border-bottom">{{ organization.address}}, тел. {{ organization.phone }}</td>
+						<td colspan="18" class="bold little border-bottom">{{ company.requisites.address}}, тел. {{ company.requisites.phone }}</td>
 					</tr>
 					<tr>
 						<td colspan="49"></td>
@@ -123,7 +123,7 @@
 					</tr>
 					<tr>
 						<td colspan="14" class="left">Государственный номерной знак</td>
-						<td colspan="31" class="bold border-bottom">{{ item.auto.numberplate | uppercase }}</td>
+						<td colspan="31" class="bold border-bottom">{{ item.auto.numberplate }}</td>
 						<td colspan="1"></td>
 						<td colspan="7">Гаражный номер</td>
 						<td colspan="7" class="border border-bold"></td>
@@ -633,7 +633,7 @@
 					<tr></tr>
 					<tr>
 						<td colspan="5" class="left bottom">Организация:</td>
-						<td colspan="13" class="bottom bold little border-bottom">{{ organization.name }}</td>
+						<td colspan="13" class="bottom bold little border-bottom">{{ company.name }}</td>
 						
 						<td colspan="8" class=" border-right-double border-left-double border-bottom-double">25</td>
 						<td colspan="14" class="border-right-double border-bottom-double">26</td>
@@ -652,7 +652,7 @@
 						<td colspan="7" class="border-right-double border-bottom"></td>
 					</tr>
 					<tr>
-						<td colspan="18" class="bottom bold little border-bottom">{{ organization.address }}</td>
+						<td colspan="18" class="bottom bold little border-bottom">{{ company.requisites.address }}</td>
 
 						<td colspan="8" class=" border-right-double border-left-double border-bottom">&nbsp;</td>
 						<td colspan="14" class="border-right-double border-bottom"></td>
@@ -965,14 +965,9 @@
 
 <script>
 	export default {
-		props: { item: Object },
+		props: { item: Object, company: Object },
 		data() {
 			return {
-				organization: {
-					name: 'ООО "Таас-Юрях Нефтегаздобыча"',
-					address: 'г. Иркутск, ул. Байкальская, д. 279, оф. 502',
-					phone: '8(3952)000-000'
-				},
 				date: new Date(),
 				months: [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря' ]
 			}
