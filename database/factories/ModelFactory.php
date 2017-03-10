@@ -11,18 +11,6 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => 'Павленко Сергей',
-        'email' => 'sergey@impress.io',
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-        'company_id' => 1
-    ];
-});
-
 $factory->define(App\Employer::class, function (Faker\Generator $faker) {
     return [
         'first_name' => $faker->firstNameMale,
